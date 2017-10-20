@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://cearch.me.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://cearch.me.org/">
+
+<xs:element name="IOException" type="tns:IOException"/>
+
+<xs:element name="doSearch" type="tns:doSearch"/>
+
+<xs:element name="doSearchResponse" type="tns:doSearchResponse"/>
+
+<xs:element name="getDateDiff" type="tns:getDateDiff"/>
+
+<xs:element name="getDateDiffResponse" type="tns:getDateDiffResponse"/>
+
+<xs:element name="runSever" type="tns:runSever"/>
+
+<xs:element name="runSeverResponse" type="tns:runSeverResponse"/>
+
+<xs:complexType name="runSever">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="runSeverResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="IOException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDateDiff">
+<xs:sequence>
+<xs:element name="arg0" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="arg1" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="arg2" type="tns:timeUnit" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDateDiffResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="doSearch">
+<xs:sequence>
+<xs:element name="s1" type="xs:string" minOccurs="0"/>
+<xs:element name="s2" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="doSearchResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="timeUnit">
+<xs:restriction base="xs:string">
+<xs:enumeration value="NANOSECONDS"/>
+<xs:enumeration value="MICROSECONDS"/>
+<xs:enumeration value="MILLISECONDS"/>
+<xs:enumeration value="SECONDS"/>
+<xs:enumeration value="MINUTES"/>
+<xs:enumeration value="HOURS"/>
+<xs:enumeration value="DAYS"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:schema>
